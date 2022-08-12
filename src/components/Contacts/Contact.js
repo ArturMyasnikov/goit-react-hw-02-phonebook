@@ -1,4 +1,5 @@
 import s from './Contacts.module.css';
+import PropTypes from 'prop-types';
 
 export function ContactListItem({ contact, onDelete }) {
   return (
@@ -36,3 +37,13 @@ export function ContactList({ contacts, filter, onDelete }) {
     </ul>
   );
 }
+
+ContactList.propTypes = {
+  contacts: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
+    })
+  ),
+};
