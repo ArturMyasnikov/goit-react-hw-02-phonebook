@@ -1,26 +1,7 @@
-import s from './Contacts.module.css';
 import PropTypes from 'prop-types';
+import ContactListItem from './ContactListItem';
 
-export function ContactListItem({ contact, onDelete }) {
-  return (
-    <li className={s.item}>
-      <p>
-        {contact.name} : {contact.number}
-      </p>
-      <button
-        className={s.btn__delete}
-        type="button"
-        onClick={() => {
-          onDelete(contact.id);
-        }}
-      >
-        Delete
-      </button>
-    </li>
-  );
-}
-
-export function ContactList({ contacts, filter, onDelete }) {
+export default function ContactList({ contacts, filter, onDelete }) {
   if (filter !== '') {
     return;
   }

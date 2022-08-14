@@ -1,5 +1,6 @@
 import React from 'react';
 import { nanoid } from 'nanoid';
+import PropTypes from 'prop-types';
 
 export default class ContactForm extends React.Component {
   state = {
@@ -63,3 +64,7 @@ export default class ContactForm extends React.Component {
     );
   }
 }
+
+ContactForm.propTypes = {
+  addToContacts: PropTypes.func,
+};
