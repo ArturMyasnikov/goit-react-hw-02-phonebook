@@ -35,9 +35,11 @@ export default class App extends React.Component {
   };
 
   handleChange = event => {
-    this.setState({
-      [event.currentTarget.name]: event.currentTarget.value,
-    });
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
+    // this.setState({
+    //   [event.currentTarget.name]: event.currentTarget.value,
+    // });
   };
 
   onFilter = () => {
